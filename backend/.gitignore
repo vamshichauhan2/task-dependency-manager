@@ -1,4 +1,13 @@
-venv/
+# Python
 __pycache__/
 *.pyc
-.env
+
+# Virtual environment
+venv/
+env/
+
+# Django
+db.sqlite3
+
+# OS
+.DS_Store
