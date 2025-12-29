@@ -78,6 +78,23 @@ This can be added later by introducing a delete action with confirmation in the 
 
 ### Summary
 
-All mandatory requirements of the assignment have been completed. Optional features were intentionally scoped out and documented to maintain focus on correctness and clarity.
+All mandatory requirements of the assignment have been completed. Optional features were intentionally scoped out and documented to maintain focus on correctness and clarity. 
+
+
+
+
+Brief Write-up
+
+Circular Dependency Detection & Time Complexity
+To detect circular dependencies, I treated tasks and their dependencies as a directed graph.
+Whenever a new dependency is added, I run a Depth-First Search (DFS) starting from the dependency node to check if the original task can be reached again. If it can, a cycle exists and the dependency is rejected.
+This approach runs in O(V + E) time, where V is the number of tasks and E is the number of dependencies, which is efficient for the expected task size.
+
+Most Challenging Part & How I Solved It
+The most challenging part was keeping task statuses consistent when dependencies changed.
+I solved this by recalculating the status of dependent tasks whenever a task is updated. This ensures that blocked, pending, in-progress, and completed states always reflect the current dependency state without manual intervention.
+
+What I Would Improve With More Time
+With more time, I would add drag-and-drop support in the graph visualization, zoom controls, and the ability to export the graph as an image. I would also enhance the UI with smoother interactions and possibly add real-time updates using WebSockets.
 
 
